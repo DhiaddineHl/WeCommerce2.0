@@ -1,14 +1,18 @@
 import './App.css'
-import { Flex, Text, Button } from '@radix-ui/themes';
 import NavigationBar from './components/NavigationBar';
-import ProductCard from './components/ProductCard';
+import ProductsPage from './pages/ProductsPage';
+import ShoppingCart from './components/ShoppingCart';
+import { useState } from 'react';
 
 function App() {
 
+  const [isCartOpen, setCartOpen] = useState(false);
+
   return (
     <>
-    <NavigationBar />
-    <ProductCard />
+    <NavigationBar onOpenCart={() => setCartOpen(true)} />
+    <ProductsPage />
+    <ShoppingCart isOpen={isCartOpen} onClose={() => setCartOpen(false)} />
     </>
   )
 }

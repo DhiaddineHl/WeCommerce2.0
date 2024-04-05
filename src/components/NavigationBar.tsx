@@ -3,7 +3,11 @@ import { FaShop } from "react-icons/fa6";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FiLogIn } from "react-icons/fi";
 
-const NavigationBar = () => {
+interface NavigationBarProps {
+  onOpenCart : () => void
+}
+
+const NavigationBar = ({onOpenCart} : NavigationBarProps) => {
   return (
     <Flex direction="row" justify={'between'} align={'center'} className="p-4 shadow-md" >
         <FaShop size={'40'} />
@@ -13,7 +17,7 @@ const NavigationBar = () => {
       </Flex>
       <Flex gap={'6'}>
         <Flex gap={'2'} align={'center'}>
-        <MdOutlineShoppingCart size={'30'} />
+        <MdOutlineShoppingCart size={'30'} onClick={onOpenCart} />
         <Badge color="blue">0</Badge>
         </Flex>
         <Button variant="surface">

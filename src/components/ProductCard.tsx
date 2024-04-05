@@ -1,30 +1,52 @@
 import { Box, Card, Inset, Text, Strong, Flex, Button } from "@radix-ui/themes"
 import { MdOutlineShoppingCart } from "react-icons/md";
-import watch from '../assets/images/watch.jpg'
-import shoe from '../assets/images/Shoe.jpg'
+import { FaStar } from "react-icons/fa";
+import QuantityCounter from "./QuantityCounter";
+import { useState } from "react";
 
 
-function ProductCard() {
+interface ProductProps {
+    id : number;
+    name : string;
+    description : string;
+    price : number;
+    image_url : string;
+    rating : number;
+}
+
+function ProductCard({id, name, description, price, image_url, rating} : ProductProps) {
+
+    const [quantityCounterVisible, setQuantityCounterVisible] = useState(false);
 return (
-    <Box maxWidth={'20%'} className="m-12">
+    <Box id={id.toString()} className="hover:opacity-85">
         <figure className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
             <img
-            src={watch}
+            src={image_url}
             alt="Bold typography"
             className="w-full h-full object-cover rounded-lg"
             />
         </figure>
         <Flex direction="column" gap="2" py="2">
             <Flex justify={'between'}>
-                    <Strong>Product Name</Strong>
-                    <Strong>$price</Strong>
+                    <Strong>{name}</Strong>
+                    <Strong>${price}</Strong>
             </Flex>
-            <Text size={'2'} >Description of the product</Text>
-            <Text>Rating</Text>
-            <Button variant="outline" size={'2'} color="gray" highContrast radius="full">
-                    Add to cart
-                    <MdOutlineShoppingCart size={'20'} />
-            </Button>
+            <Text size={'2'} >{description}</Text>
+            <Flex>
+                {Array.from({ length: rating }, (_, index) => (
+                    <FaStar key={index} size={'20'} />
+                ))}
+            </Flex>
+            <Flex direction={'row'} gap={'2'} align={'center'} >
+                <Button variant="outline" size={'3'} color="gray" highContrast radius="full" onClick={
+                    () => setQuantityCounterVisible(true)
+                
+                }>
+                        Add to cart
+                        <MdOutlineShoppingCart size={'20'} />
+                </Button>
+                { quantityCounterVisible && <QuantityCounter />}
+            </Flex>
         </Flex>
     </Box>
 
