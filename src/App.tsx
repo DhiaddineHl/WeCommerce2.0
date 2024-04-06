@@ -3,6 +3,8 @@ import NavigationBar from './components/NavigationBar';
 import ProductsPage from './pages/ProductsPage';
 import ShoppingCart from './components/ShoppingCart';
 import { useState } from 'react';
+import FormInput from './components/FormInput';
+import ProductForm from './pages/ProductForm';
 
 function App() {
 

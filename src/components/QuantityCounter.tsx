@@ -8,7 +8,7 @@ const QuantityCounter = () => {
     const [quantity, setQuantity] = useState<number>(0)
 
   return (
-    <Flex className='bg-slate-200 rounded-3xl w-36 h-11 items-center justify-center'>
+    <Flex flexGrow={'1'} className='bg-slate-200 rounded-3xl w-36 h-11 items-center justify-center'>
         <button className='p-4' onClick={() => setQuantity(quantity - 1)} >
             <IoMdRemove size={20} />
         </button>

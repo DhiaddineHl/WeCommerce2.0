@@ -12,8 +12,8 @@ const NavigationBar = ({onOpenCart} : NavigationBarProps) => {
     <Flex direction="row" justify={'between'} align={'center'} className="p-4 shadow-md" >
         <FaShop size={'40'} />
       <Flex gap={'6'}>
-        <Text weight={'medium'} >Products</Text>
-        <Text weight={'medium'} >Dashboard</Text>
+        <Text weight={'medium'} >Marketplace</Text>
+        <Text weight={'medium'} >My Products</Text>
       </Flex>
       <Flex gap={'6'}>
         <Flex gap={'2'} align={'center'}>

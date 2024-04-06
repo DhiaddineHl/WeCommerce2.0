@@ -1,6 +1,7 @@
 import { Box, Card, Inset, Text, Strong, Flex, Button } from "@radix-ui/themes"
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
+import { MdPerson } from "react-icons/md";
 import QuantityCounter from "./QuantityCounter";
 import { useState } from "react";
 
@@ -18,7 +19,7 @@ function ProductCard({id, name, description, price, image_url, rating} : Product
 
     const [quantityCounterVisible, setQuantityCounterVisible] = useState(false);
 return (
-    <Box id={id.toString()} className="hover:opacity-85">
+    <Box id={id.toString()}>
         <figure className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
             <img
             src={image_url}
@@ -32,10 +33,13 @@ return (
                     <Strong>${price}</Strong>
             </Flex>
             <Text size={'2'} >{description}</Text>
-            <Flex>
-                {Array.from({ length: rating }, (_, index) => (
-                    <FaStar key={index} size={'20'} />
-                ))}
+            <Flex justify={'between'} align={'center'}>
+                <Flex>
+                    {Array.from({ length: rating }, (_, index) => (
+                        <FaStar key={index} size={'20'} />
+                    ))}
+                </Flex>
+                <MdPerson size={'20'} />
             </Flex>
             <Flex direction={'row'} gap={'2'} align={'center'} >
                 <Button variant="outline" size={'3'} color="gray" highContrast radius="full" onClick={
