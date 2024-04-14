@@ -1,9 +1,9 @@
-import { Box, Card, Inset, Text, Strong, Flex, Button } from "@radix-ui/themes"
+import { Box, Text, Strong, Flex, Button, Avatar } from "@radix-ui/themes"
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
-import { MdPerson } from "react-icons/md";
 import QuantityCounter from "./QuantityCounter";
 import { useState } from "react";
+import { Bayer } from "../data/products";
 
 
 interface ProductProps {
@@ -13,11 +13,13 @@ interface ProductProps {
     price : number;
     image_url : string;
     rating : number;
+    bayer : Bayer
 }
 
-function ProductCard({id, name, description, price, image_url, rating} : ProductProps) {
+function ProductCard({id, name, description, price, image_url, rating, bayer} : ProductProps) {
 
     const [quantityCounterVisible, setQuantityCounterVisible] = useState(false);
+
 return (
     <Box id={id.toString()}>
         <figure className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
@@ -39,7 +41,7 @@ return (
                         <FaStar key={index} size={'20'} />
                     ))}
                 </Flex>
-                <MdPerson size={'20'} />
+                <Avatar fallback={bayer.avatar.initials} color={bayer.avatar.color} size={'2'} />
             </Flex>
             <Flex direction={'row'} gap={'2'} align={'center'} >
                 <Button variant="outline" size={'3'} color="gray" highContrast radius="full" onClick={
@@ -49,7 +51,7 @@ return (
                         Add to cart
                         <MdOutlineShoppingCart size={'20'} />
                 </Button>
-                { quantityCounterVisible && <QuantityCounter />}
+                { quantityCounterVisible && <QuantityCounter itemId={id} />}
             </Flex>
         </Flex>
     </Box>

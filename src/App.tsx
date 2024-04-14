@@ -3,8 +3,8 @@ import NavigationBar from './components/NavigationBar';
 import ProductsPage from './pages/ProductsPage';
 import ShoppingCart from './components/ShoppingCart';
 import { useState } from 'react';
-import FormInput from './components/FormInput';
-import ProductForm from './pages/ProductForm';
+
+import ShoppingCartProvider from './context/ShoppingCartContext';
 
 function App() {
 
@@ -12,9 +12,11 @@ function App() {
 
   return (
     <>
+    <ShoppingCartProvider>
     <NavigationBar onOpenCart={() => setCartOpen(true)} />
     <ProductsPage />
     <ShoppingCart isOpen={isCartOpen} onClose={() => setCartOpen(false)} />
+    </ShoppingCartProvider>
     </>
   )
 }

@@ -12,6 +12,7 @@ const ProductsPage = () => {
             price={product.price}
             image_url={product.image_url}
             rating={product.rating}
+            bayer={product.bayer}
             />
         ))}
     </div>
