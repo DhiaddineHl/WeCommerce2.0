@@ -1,9 +1,8 @@
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import CartItem from './CartItem';
 import { useShoppingCart } from '../context/ShoppingCartContext';
-import  {Product}  from '../data/products';
 import { products } from '../data/products';
 
 interface ShoppingCartProps {
@@ -39,17 +38,13 @@ interface ShoppingCartProps {
 
 const ShoppingCart = ({isOpen, onClose} : ShoppingCartProps) => {
 
-  const [cartElelments, setCartElements] = useState<Product[]>([]);
 
   const {cartItems} = useShoppingCart();
 
-  cartItems.forEach((item) => {
-    const product = products.find(product => product.id === item.id);
-    if (product) {
-      setCartElements([...cartElelments, product]);
-    }
-  })
-
+  const total = cartItems.reduce((total, item) => {
+    const cartItem = products?.find((product) => product.id === item.id);
+    return total + (Number(cartItem?.price) || 0) * item.quantity;
+  },0);
 
   return (
     <Transition.Root show={isOpen} as={Fragment}>
@@ -100,39 +95,8 @@ const ShoppingCart = ({isOpen, onClose} : ShoppingCartProps) => {
                         <div className="flow-root">
                           <ul role="list" className="-my-6 divide-y divide-gray-200">
 
-                            {cartElelments.map((product) => (
-                              <li key={product.id} className="flex py-6">
-                                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                  <img
-                                    src={product.image_url}
-                                    className="h-full w-full object-cover object-center"
-                                  />
-                                </div>
-
-                                <div className="ml-4 flex flex-1 flex-col">
-                                  <div>
-                                    <div className="flex justify-between text-base font-medium text-gray-900">
-                                      <h3>
-                                        <a >{product.name}</a>
-                                      </h3>
-                                      <p className="ml-4">{product.price}</p>
-                                    </div>
-                                    <p className="mt-1 text-sm text-gray-500">{product.price}</p>
-                                  </div>
-                                  <div className="flex flex-1 items-end justify-between text-sm">
-                                    <p className="text-gray-500 font-bold">Qty {product.rating}</p>
-
-                                    <div className="flex">
-                                      <button
-                                        type="button"
-                                        className="font-bold text-red-600 hover:text-red-400"
-                                      >
-                                        Remove
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
+                            {cartItems.map((item) => (
+                              <CartItem key={item.id} id={item.id} quantity={item.quantity} />
                             ))}
 
                           </ul>
@@ -142,8 +106,8 @@ const ShoppingCart = ({isOpen, onClose} : ShoppingCartProps) => {
 
                     <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
                       <div className="flex justify-between text-base font-bold text-gray-900">
-                        <p>Subtotal</p>
-                        <p>$262.00</p>
+                        <p>Total amount</p>
+                        <p>${total}</p>
                       </div>
                       <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                       <div className="mt-6">
