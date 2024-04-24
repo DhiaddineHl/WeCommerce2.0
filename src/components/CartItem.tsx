@@ -2,10 +2,11 @@ import { products } from "../data/products"
 
 interface CartItemProps {
   id : number,
-  quantity : number
+  quantity : number,
+  deleteItem : (id : number) => void
 }
 
-const CartItem = ({id, quantity} : CartItemProps) => {
+const CartItem = ({id, quantity, deleteItem} : CartItemProps) => {
 
   const product = products.find(product => product.id === id)
 
@@ -21,7 +22,7 @@ const CartItem = ({id, quantity} : CartItemProps) => {
 
       <div className="ml-4 flex flex-1 flex-col">
       <div>
-      <div className="flex justify-between text-base font-medium text-gray-900">
+      <div className="flex justify-between text-base font-semibold text-gray-900">
         <h3>
           <a>{product?.name}</a>
         </h3>
@@ -34,7 +35,8 @@ const CartItem = ({id, quantity} : CartItemProps) => {
       <div className="flex">
         <button
         type="button"
-        className="font-medium text-indigo-600 hover:text-indigo-500"
+        className="font-semibold text-indigo-600 hover:text-indigo-500"
+        onClick={ () => deleteItem(id)}
         >
         Remove
         </button>

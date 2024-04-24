@@ -10,36 +10,11 @@ interface ShoppingCartProps {
     onClose : () => void;
 }
 
-// const products = [
-
-//   {
-//     id: 1,
-//     name: 'Throwback Hip Bag',
-//     href: '#',
-//     color: 'Salmon',
-//     price: '$90.00',
-//     quantity: 1,
-//     imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-//     imageAlt: 'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-//   },
-//   {
-//     id: 2,
-//     name: 'Medium Stuff Satchel',
-//     href: '#',
-//     color: 'Blue',
-//     price: '$32.00',
-//     quantity: 1,
-//     imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
-//     imageAlt:
-//       'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
-//   },
-//   // More products...
-// ]
 
 const ShoppingCart = ({isOpen, onClose} : ShoppingCartProps) => {
 
 
-  const {cartItems} = useShoppingCart();
+  const {cartItems, removeFromCart} = useShoppingCart();
 
   const total = cartItems.reduce((total, item) => {
     const cartItem = products?.find((product) => product.id === item.id);
@@ -94,10 +69,21 @@ const ShoppingCart = ({isOpen, onClose} : ShoppingCartProps) => {
                       <div className="mt-8">
                         <div className="flow-root">
                           <ul role="list" className="-my-6 divide-y divide-gray-200">
+                            {cartItems.length === 0 ? (
+                              <li className="py-6 flex items-center justify-center text-sm text-gray-500">
+                                Your cart is empty
+                              </li>
+                            ) : (
+                              cartItems.map((item) => (
+                                <CartItem
+                                 key={item.id}
+                                  id={item.id}
+                                   quantity={item.quantity}
+                                    deleteItem={removeFromCart}
+                                   />
+                              ))
 
-                            {cartItems.map((item) => (
-                              <CartItem key={item.id} id={item.id} quantity={item.quantity} />
-                            ))}
+                            )}
 
                           </ul>
                         </div>
@@ -123,7 +109,7 @@ const ShoppingCart = ({isOpen, onClose} : ShoppingCartProps) => {
                           or{' '}
                           <button
                             type="button"
-                            className="font-semibold text-black hover:opacity-80 "
+                            className="font-semibold text-black hover:opacity-95 "
                             onClick={onClose}
                           >
                             Continue Shopping

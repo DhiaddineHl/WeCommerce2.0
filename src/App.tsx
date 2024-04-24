@@ -5,6 +5,7 @@ import ShoppingCart from './components/ShoppingCart';
 import { useState } from 'react';
 
 import ShoppingCartProvider from './context/ShoppingCartContext';
+import ProductForm from './pages/ProductForm';
 
 function App() {
 
@@ -12,11 +13,12 @@ function App() {
 
   return (
     <>
-    <ShoppingCartProvider>
+    {/* <ShoppingCartProvider>
     <NavigationBar onOpenCart={() => setCartOpen(true)} />
     <ProductsPage />
     <ShoppingCart isOpen={isCartOpen} onClose={() => setCartOpen(false)} />
-    </ShoppingCartProvider>
+    </ShoppingCartProvider> */}
+    <ProductForm />
     </>
   )
 }

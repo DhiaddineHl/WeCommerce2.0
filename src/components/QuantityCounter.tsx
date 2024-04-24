@@ -23,14 +23,14 @@ const QuantityCounter = ({itemId} : QuantityCounterProps) => {
         
 
   return (
-    <Flex flexGrow={'1'} className='bg-slate-200 rounded-3xl w-36 h-11 items-center justify-center'>
+    <Flex justify={'between'} align={'center'} className='bg-slate-200 rounded-3xl h-11'>
         <button className='p-4' onClick={() => decreaseCartquantity(itemId)} >
             <IoMdRemove size={20} />
         </button>
         <span className='p-4'>
             <Strong>{quantity}</Strong>
         </span>
-        <button className='p-4' onClick={() => increaseCartquantity(itemId)} >
+        <button className='p-4' onClick={() => {increaseCartquantity(itemId)}} >
             <IoMdAdd size={20} />
         </button>
     </Flex>

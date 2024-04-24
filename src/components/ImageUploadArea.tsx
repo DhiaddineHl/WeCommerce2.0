@@ -1,7 +1,31 @@
 import { PhotoIcon } from '@heroicons/react/24/solid'
 import { Text } from '@radix-ui/themes'
+import { ChangeEvent } from 'react'
+import { createClient } from '@supabase/supabase-js'
+
+
+const supabase = createClient(import.meta.env.VITE_PROJECT_URL,import.meta.env.VITE_PROJECT_API_KEY)
 
 const ImageUploadArea = () => {
+
+  const uploadImage = async (e : ChangeEvent) => {
+    console.log('Uploading image');
+    const file = (e.target as HTMLInputElement).files?.[0];
+    const fileName = 'file-1';
+    const {error, data } = await supabase.storage
+      .from('wecommerce-products-images')
+      .upload(fileName, file as File);
+      
+    if (error) {
+      console.error('Error uploading image', error);
+    }
+    console.log('Image uploaded', data);
+
+    const image_url  = supabase.storage.from('wecommerce-products-images').getPublicUrl(fileName).data.publicUrl;
+    console.log('Image URL', image_url);
+
+  }
+
   return (
     <div className="col-span-full">
     <label htmlFor="cover-photo" className="block leading-6 text-gray-900">
@@ -16,7 +40,7 @@ const ImageUploadArea = () => {
             className="relative cursor-pointer rounded-md bg-white text-gray-900 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
           >
             <Text weight={'medium'} >Upload a file</Text>
-            <input id="file-upload" name="file-upload" type="file" className="sr-only" />
+            <input id="file-upload" name="file-upload" type="file" className="sr-only" onChange={(e) => uploadImage(e)} />
           </label>
           <p className="pl-1">or drag and drop</p>
         </div>

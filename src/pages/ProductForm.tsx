@@ -2,7 +2,9 @@ import { Heading, Button } from '@radix-ui/themes'
 import FormInput from '../components/FormInput'
 import ImageUploadArea from '../components/ImageUploadArea'
 
+
 const ProductForm = () => {
+
   return (
     <div className='m-8'>
         <Heading as="h2" size={'5'} mb={'4'}>Enter the product details</Heading>
