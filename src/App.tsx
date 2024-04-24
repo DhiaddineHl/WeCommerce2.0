@@ -13,12 +13,12 @@ function App() {
 
   return (
     <>
-    {/* <ShoppingCartProvider>
+    <ShoppingCartProvider>
     <NavigationBar onOpenCart={() => setCartOpen(true)} />
     <ProductsPage />
     <ShoppingCart isOpen={isCartOpen} onClose={() => setCartOpen(false)} />
-    </ShoppingCartProvider> */}
-    <ProductForm />
+    </ShoppingCartProvider>
+    {/* <ProductForm /> */}
     </>
   )
 }

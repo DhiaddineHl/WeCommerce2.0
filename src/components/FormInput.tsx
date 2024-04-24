@@ -1,4 +1,5 @@
 import { Text } from "@radix-ui/themes"
+import { useFormikContext } from "formik"
 
 interface FormInputProps {
     htmlFor: string
@@ -8,6 +9,9 @@ interface FormInputProps {
 }
 
 const FormInput = ({htmlFor, label, id, type} : FormInputProps) => {
+
+    const { setFieldTouched, handleChange } = useFormikContext();
+
   return (
     <div className="mb-4">
         <label htmlFor={htmlFor}>
@@ -15,6 +19,8 @@ const FormInput = ({htmlFor, label, id, type} : FormInputProps) => {
         </label>
         <div className="mt-2">
             <input
+                onChange={handleChange(id)}
+                onBlur={() => setFieldTouched(id)}
                 type={type}
                 id={id}
                 autoComplete="given-name"
