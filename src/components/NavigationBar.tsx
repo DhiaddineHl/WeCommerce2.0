@@ -27,7 +27,7 @@ const NavigationBar = ({onOpenCart} : NavigationBarProps) => {
           <Text weight={'medium'}>{cartQuantity}</Text>
         </Badge>
         </Flex>
-        <Button variant="surface">
+        <Button variant="surface" onClick={() => window.location.href = "http://localhost:5173/login-business"} >
           <Text weight={'medium'} >Login</Text>
           <FiLogIn />
           </Button>
