@@ -5,6 +5,7 @@ import { Formik } from 'formik'
 import { createClient } from '@supabase/supabase-js'
 import { ChangeEvent, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
+import useProducts from '../hooks/useProducts'
 
 
 
@@ -23,6 +24,7 @@ interface ProductFormProps {
 const ProductForm = () => {
 
     const [image_url, setImageUrl] = useState<string>('');
+    const createProduct = useProducts.createProduct();
 
     const uploadImage = async (e : ChangeEvent) => {
 
@@ -55,6 +57,7 @@ const ProductForm = () => {
             initialValues={initialValues}
             onSubmit={(values): void => {
                 console.log({image_url : image_url, ...values})
+                createProduct.mutate({image_url : image_url, ...values});
             }}
         >
             {({handleSubmit}) => (

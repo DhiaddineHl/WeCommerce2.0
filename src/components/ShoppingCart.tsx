@@ -4,6 +4,8 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 import CartItem from './CartItem';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 import { products } from '../data/products';
+import createPayment from '../hooks/usePayment';
+import useProducts from '../hooks/useProducts';
 
 interface ShoppingCartProps {
     isOpen : boolean;
@@ -20,6 +22,18 @@ const ShoppingCart = ({isOpen, onClose} : ShoppingCartProps) => {
     const cartItem = products?.find((product) => product.id === item.id);
     return total + (Number(cartItem?.price) || 0) * item.quantity;
   },0);
+
+  console.log(total);
+  
+
+  const {data} = useProducts.fetchProducts();
+
+  const findSellerIdOfProduct = (product_id : number) => {
+    const product = data?.find(product => product.id === product_id)
+    return product?.seller_id
+  }
+
+  const onCreatePayment = createPayment();
 
   return (
     <Transition.Root show={isOpen} as={Fragment}>
@@ -99,7 +113,13 @@ const ShoppingCart = ({isOpen, onClose} : ShoppingCartProps) => {
                       <div className="mt-6">
                         <a
                           href="#"
-                          onClick={() => window.location.href = 'http://localhost:3001/login-particular'}
+                          onClick={() => {
+                            // window.location.href = 'http://localhost:3001/login-particular'
+                            onCreatePayment.mutate({
+                              amount: total,
+                              beneficiaryId: findSellerIdOfProduct(cartItems[0].id) ?? 0
+                            })
+                          }}
                           className="flex items-center justify-center rounded-3xl border border-transparent bg-black px-6 py-3 text-base font-semibold text-white shadow-sm hover:opacity-80"
                         >
                           Checkout

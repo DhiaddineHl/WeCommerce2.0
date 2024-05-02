@@ -1,21 +1,25 @@
-import { useQueryClient, useMutation } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import apiClient from "../services/apiClient";
 import { PaymentCreationRequest } from "./utils/PaymentCreationRequest";
-import { useCookies } from "react-cookie";
 
+import Cookies from 'universal-cookie';
+import paymentClient from "../services/paymentClient";
 
 const createPayment = () => {
 
-    const [cookies, setCookie] = useCookies(["paymentId"])
+    const cookies = new Cookies();
 
     return useMutation({
         mutationFn : (request : PaymentCreationRequest) =>
-        apiClient.post<number>("/payment/classic/create", request)
+        paymentClient
+        .post<number>("payment/classic/create", request)
         .then(res => {
-            setCookie('paymentId', res.data, {sameSite: "none", secure:true})
+            console.log(res.data);
+            
+            cookies.set('paymentId', res.data, {sameSite: "none", secure:true})
         }),
         onSuccess : () => {
-            window.location.href = 'http://localhost:3001/login-particular'
+            // window.location.href = 'http://localhost:3001/login-particular'
         }
     })
 

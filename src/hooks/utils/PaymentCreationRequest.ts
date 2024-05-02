@@ -2,7 +2,7 @@
 
 export interface PaymentCreationRequest {
 
-    beneficiaryId : string;
+    beneficiaryId : number;
     amount : number;
 
 }

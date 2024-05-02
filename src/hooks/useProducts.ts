@@ -4,12 +4,12 @@ import { ProductCreationRequest } from "./utils/ProductCreationRequest";
 import { useNavigate } from "react-router-dom";
 
 interface Product {
-    id : string;
+    id : number;
     name : string;
     description : string;
     price : number;
     image_url : string;
-    seller_id : string;
+    seller_id : number;
 
 }
 
@@ -19,6 +19,21 @@ const fetchProductsBySeller = () => {
 
     apiClient
     .get("/products/seller-token")
+    .then(res => res.data)
+
+    return useQuery<Product[]>({
+        queryKey : ["products"],
+        queryFn : fetchProducts
+    })
+
+}
+
+const fetchProducts = () => {
+
+    const fetchProducts = () =>
+
+    apiClient
+    .get("/products")
     .then(res => res.data)
 
     return useQuery<Product[]>({
@@ -55,5 +70,6 @@ const createProduct = () => {
 export default {
     fetchProductsBySeller,
     fetchProduct,
-    createProduct
+    createProduct,
+    fetchProducts
 }

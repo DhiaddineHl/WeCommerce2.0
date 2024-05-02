@@ -1,6 +1,7 @@
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import ProductForm from '../pages/ProductForm';
 import HomePage from './HomePage';
+import MyProductsPage from './MyProductsPage';
 
 export const appRouter = createBrowserRouter([
     {
@@ -13,6 +14,6 @@ export const appRouter = createBrowserRouter([
     },
     {
         path : '/my-products',
-        element : <ProductForm />
+        element : <MyProductsPage />
     },
 ])
