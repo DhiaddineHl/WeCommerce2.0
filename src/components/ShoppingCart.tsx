@@ -99,7 +99,7 @@ const ShoppingCart = ({isOpen, onClose} : ShoppingCartProps) => {
                       <div className="mt-6">
                         <a
                           href="#"
-                          onClick={() => window.location.href = 'http://localhost:5173/login-particular'}
+                          onClick={() => window.location.href = 'http://localhost:3001/login-particular'}
                           className="flex items-center justify-center rounded-3xl border border-transparent bg-black px-6 py-3 text-base font-semibold text-white shadow-sm hover:opacity-80"
                         >
                           Checkout
