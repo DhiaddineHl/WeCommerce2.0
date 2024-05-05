@@ -8,33 +8,31 @@ interface Product {
     name : string;
     description : string;
     price : number;
+    rating : number;
     image_url : string;
-    seller_id : number;
+    sellerId : number;
 
 }
 
 const fetchProductsBySeller = () => {
 
     const fetchProducts = () =>
-
     apiClient
-    .get("/products/seller-token")
+    .get<Product[]>("/products/seller-token")
     .then(res => res.data)
 
     return useQuery<Product[]>({
         queryKey : ["products"],
         queryFn : fetchProducts
     })
-
 }
 
 const fetchProducts = () => {
 
     const fetchProducts = () =>
-
-    apiClient
-    .get("/products")
-    .then(res => res.data)
+        apiClient
+        .get<Product[]>("/products")
+        .then(res => res.data)
 
     return useQuery<Product[]>({
         queryKey : ["products"],

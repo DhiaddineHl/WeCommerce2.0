@@ -3,7 +3,6 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import QuantityCounter from "./QuantityCounter";
 import { useState } from "react";
-import { Bayer } from "../data/products";
 
 
 interface ProductProps {
@@ -13,10 +12,9 @@ interface ProductProps {
     price : number;
     image_url : string;
     rating : number;
-    bayer : Bayer
 }
 
-function ProductCard({id, name, description, price, image_url, rating, bayer} : ProductProps) {
+function ProductCard({id, name, description, price, image_url, rating} : ProductProps) {
 
     const [quantityCounterVisible, setQuantityCounterVisible] = useState(false);
 
@@ -41,7 +39,6 @@ return (
                         <FaStar key={index} size={'20'} />
                     ))}
                 </Flex>
-                <Avatar fallback={bayer.avatar.initials} color={bayer.avatar.color} size={'2'} />
             </Flex>
             <Flex direction={'row'} gap={'2'} align={'center'} >
                 <Button variant="outline" size={'3'} color="gray" highContrast radius="full" onClick={

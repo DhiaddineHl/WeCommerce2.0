@@ -14,13 +14,10 @@ const QuantityCounter = ({itemId} : QuantityCounterProps) => {
         getItemQuantity,
          increaseCartquantity,
           decreaseCartquantity,
-            cartItems
         } = useShoppingCart();
 
         const quantity = getItemQuantity(itemId);
-
-        console.log(cartItems);
-        
+    
 
   return (
     <Flex justify={'between'} align={'center'} className='bg-slate-200 rounded-3xl h-11'>

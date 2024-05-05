@@ -1,4 +1,5 @@
-import { products } from "../data/products"
+import useProducts from "../hooks/useProducts";
+
 
 interface CartItemProps {
   id : number,
@@ -8,7 +9,9 @@ interface CartItemProps {
 
 const CartItem = ({id, quantity, deleteItem} : CartItemProps) => {
 
-  const product = products.find(product => product.id === id)
+  const {data : products} = useProducts.fetchProducts();
+
+  const product = products?.find(product => product.id === id)
 
   return (
     <li key={id} className="flex py-6">
