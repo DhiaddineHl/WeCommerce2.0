@@ -1,8 +1,9 @@
-import { Box, Text, Strong, Flex, Button, Avatar } from "@radix-ui/themes"
+import { Box, Text, Strong, Flex, Button } from "@radix-ui/themes"
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import QuantityCounter from "./QuantityCounter";
-import { useState } from "react";
+import { useShoppingCart } from "../context/ShoppingCartContext";
+import { useNavigate } from "react-router-dom";
 
 
 interface ProductProps {
@@ -16,13 +17,24 @@ interface ProductProps {
 
 function ProductCard({id, name, description, price, image_url, rating} : ProductProps) {
 
-    const [quantityCounterVisible, setQuantityCounterVisible] = useState(false);
+        const {
+            getItemQuantity,
+             increaseCartquantity,
+            } = useShoppingCart();
+    
+            const quantity = getItemQuantity(id);
+
+    const getImageUrl = (image_url : string) => {
+        return "/images/" + image_url;
+    }
+
+    const navigate = useNavigate();
 
 return (
-    <Box id={id.toString()}>
-        <figure className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+    <Box id={id.toString()} >
+        <figure onClick={() => navigate(`/products/${id}`)} className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none transition-transform duration-300 hover:scale-105 lg:h-80">
             <img
-            src={image_url}
+            src={getImageUrl(image_url)}
             alt="Bold typography"
             className="w-full h-full object-cover rounded-lg"
             />
@@ -42,13 +54,12 @@ return (
             </Flex>
             <Flex direction={'row'} gap={'2'} align={'center'} >
                 <Button variant="outline" size={'3'} color="gray" highContrast radius="full" onClick={
-                    () => setQuantityCounterVisible(true)
-                
+                    () => increaseCartquantity(id)
                 }>
                         Add to cart
                         <MdOutlineShoppingCart size={'20'} />
                 </Button>
-                { quantityCounterVisible && <QuantityCounter itemId={id} />}
+                { quantity > 0 && <QuantityCounter itemId={id} />}
             </Flex>
         </Flex>
     </Box>

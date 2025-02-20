@@ -5,6 +5,7 @@ import CartItem from './CartItem';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 import createPayment from '../hooks/usePayment';
 import useProducts from '../hooks/useProducts';
+import { Link } from 'react-router-dom';
 
 interface ShoppingCartProps {
     isOpen : boolean;
@@ -21,20 +22,20 @@ const ShoppingCart = ({isOpen, onClose} : ShoppingCartProps) => {
 
   const total = cartItems.reduce((total, item) => {
     const cartItem = products?.find((product) => product.id === item.id);
-    return total + (Number(cartItem?.price) || 0) * item.quantity;
+    return total + (Number(cartItem?.price) || 0) * item.qty;
   },0);
 
 
-  const findSellerIdOfProduct = (product_id : number) => {
-    const product = products?.find(product => product.id === product_id)
-    return product?.sellerId
-  }
+  // const findSellerIdOfProduct = (product_id : number) => {
+  //   const product = products?.find(product => product.id === product_id)
+  //   return product?.sellerId
+  // }
 
   const onCreatePayment = createPayment();
 
-  if(onCreatePayment.isSuccess) {
-    window.location.href = 'http://localhost:3001/login-particular'
-  }
+  // if(onCreatePayment.isSuccess) {
+  //   window.location.href = 'http://localhost:3001/login-particular'
+  // }
 
   return (
     <Transition.Root show={isOpen} as={Fragment}>
@@ -93,7 +94,7 @@ const ShoppingCart = ({isOpen, onClose} : ShoppingCartProps) => {
                                 <CartItem
                                  key={item.id}
                                   id={item.id}
-                                   quantity={item.quantity}
+                                   quantity={item.qty}
                                     deleteItem={removeFromCart}
                                    />
                               ))
@@ -112,18 +113,18 @@ const ShoppingCart = ({isOpen, onClose} : ShoppingCartProps) => {
                       </div>
                       <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                       <div className="mt-6">
-                        <a
-                          href="#"
-                          onClick={() => {
-                            onCreatePayment.mutate({
-                              amount: total,
-                              beneficiaryId: findSellerIdOfProduct(cartItems[0].id) ?? 0
-                            })
-                          }}
+                        <Link
+                          to={"/checkout"}
+                          // onClick={() => {
+                          //   onCreatePayment.mutate({
+                          //     amount: total,
+                          //     beneficiaryId: findSellerIdOfProduct(cartItems[0].id) ?? 0
+                          //   })
+                          // }}
                           className="flex items-center justify-center rounded-3xl border border-transparent bg-black px-6 py-3 text-base font-semibold text-white shadow-sm hover:opacity-80"
                         >
                           Checkout
-                        </a>
+                        </Link>
                       </div>
                       <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                         <p>

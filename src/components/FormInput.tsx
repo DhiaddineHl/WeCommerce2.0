@@ -10,7 +10,7 @@ interface FormInputProps {
 
 const FormInput = ({htmlFor, label, id, type} : FormInputProps) => {
 
-    const { setFieldTouched, handleChange } = useFormikContext();
+    const { setFieldTouched, handleChange, errors, touched } = useFormikContext();
 
   return (
     <div className="mb-4">

@@ -1,7 +1,8 @@
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
-import ProductForm from '../pages/ProductForm';
-import HomePage from './HomePage';
-import MyProductsPage from './MyProductsPage';
+import {createBrowserRouter} from 'react-router-dom';
+import ShopPage from './routes/ShopPage';
+import CheckoutPage from './routes/CheckoutPage';
+import ProductDetailsPage from './routes/ProductDetailsPage';
+import HomePage from './routes/HomePage';
 
 export const appRouter = createBrowserRouter([
     {
@@ -9,11 +10,15 @@ export const appRouter = createBrowserRouter([
         element : <HomePage />
     },
     {
-        path : '/create-product',
-        element : <ProductForm />
+        path : '/shop',
+        element : <ShopPage />
     },
     {
-        path : '/my-products',
-        element : <MyProductsPage />
+        path : '/checkout',
+        element : <CheckoutPage />
     },
+    {
+        path: '/products/:id',
+        element: <ProductDetailsPage />
+    }
 ])

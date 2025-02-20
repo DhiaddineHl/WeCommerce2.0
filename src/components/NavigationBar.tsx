@@ -1,4 +1,4 @@
-import { Flex, Text, Badge, Button } from "@radix-ui/themes"
+import { Flex, Text, Badge, Button, TextField } from "@radix-ui/themes"
 import { FaShop } from "react-icons/fa6";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FiLogIn } from "react-icons/fi";
@@ -8,7 +8,7 @@ import Cookies from 'universal-cookie';
 import { useState } from "react";
 
 interface NavigationBarProps {
-  onOpenCart : () => void
+  onOpenCart? : () => void
 }
 
 const NavigationBar = ({onOpenCart} : NavigationBarProps) => {
@@ -37,6 +37,7 @@ const NavigationBar = ({onOpenCart} : NavigationBarProps) => {
           </Flex>
         }
       <Flex gap={'6'}>
+        <TextField.Root radius="full" size={'3'} variant="soft" color="gray" placeholder="Search for a product…" />
         <Flex gap={'2'} align={'center'} onClick={onOpenCart}>
         <MdOutlineShoppingCart size={'30'}  />
         <Badge color="blue">

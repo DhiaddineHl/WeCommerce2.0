@@ -17,7 +17,7 @@ const CartItem = ({id, quantity, deleteItem} : CartItemProps) => {
     <li key={id} className="flex py-6">
       <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
       <img
-      src={product?.image_url}
+      src={"/images/"+ product?.imageName}
       alt={product?.name}
       className="h-full w-full object-cover object-center"
       />

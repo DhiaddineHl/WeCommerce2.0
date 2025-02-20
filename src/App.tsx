@@ -5,7 +5,7 @@ import ShoppingCart from './components/ShoppingCart';
 import { useState } from 'react';
 
 import ShoppingCartProvider from './context/ShoppingCartContext';
-import ProductForm from './pages/ProductForm';
+import ProductForm from './pages/ChekoutPage';
 
 function App() {
 

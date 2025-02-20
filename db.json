@@ -1,0 +1,181 @@
+{
+    "categories": [
+      { "id": 1, "name": "Cameras", "productListId": 1 },
+      { "id": 2, "name": "Minicars", "productListId": 2 },
+      { "id": 3, "name": "Headphones", "productListId": 3 },
+      { "id": 4, "name": "Watches", "productListId": 4 },
+      { "id": 5, "name": "Sunglasses", "productListId": 5 }
+    ],
+    "products": [
+        { "id": 101, "name": "Camera 1", "imageName": "camera1.jpg", "price": 500, "discoutRate": 10, "review": 4.5, "description": "High-quality camera for photography." },
+        { "id": 102, "name": "Camera 2", "imageName": "camera2.jpg", "price": 650, "discoutRate": 15, "review": 4.2, "description": "Professional camera with advanced features." },
+        { "id": 103, "name": "Camera 3", "imageName": "camera3.jpg", "price": 450, "discoutRate": 5, "review": 4.0, "description": "Compact camera for daily use." },
+        { "id": 104, "name": "Camera 4", "imageName": "camera4.jpg", "price": 750, "discoutRate": 20, "review": 4.8, "description": "Best-in-class DSLR camera." },
+        { "id": 105, "name": "Camera 5", "imageName": "camera5.jpg", "price": 550, "discoutRate": 8, "review": 4.3, "description": "Great camera for travel photography." },
+        { "id": 106, "name": "Camera 6", "imageName": "camera6.jpg", "price": 600, "discoutRate": 12, "review": 4.6, "description": "High-performance camera with zoom lens." },
+        { "id": 201, "name": "Mini Car 1", "imageName": "mini1.jpg", "price": 15000, "discoutRate": 5, "review": 4.1, "description": "Compact and stylish mini car." },
+        { "id": 202, "name": "Mini Car 2", "imageName": "mini2.jpg", "price": 18000, "discoutRate": 7, "review": 4.3, "description": "Economical and reliable city car." },
+        { "id": 203, "name": "Mini Car 3", "imageName": "mini3.jpg", "price": 17000, "discoutRate": 6, "review": 4.2, "description": "Great fuel efficiency and smooth drive." },
+        { "id": 204, "name": "Mini Car 4", "imageName": "mini4.jpg", "price": 16000, "discoutRate": 4, "review": 4.0, "description": "Compact yet powerful performance." },
+        { "id": 205, "name": "Mini Car 5", "imageName": "mini5.jpg", "price": 17500, "discoutRate": 8, "review": 4.5, "description": "Affordable and spacious interior." },
+        { "id": 206, "name": "Mini Car 6", "imageName": "mini6.jpg", "price": 15500, "discoutRate": 3, "review": 4.0, "description": "Stylish mini car with modern features." },
+        { "id": 301, "name": "Headphone 1", "imageName": "headphone1.jpg", "price": 100, "discoutRate": 10, "review": 4.6, "description": "Noise-canceling over-ear headphones." },
+        { "id": 302, "name": "Headphone 2", "imageName": "headphone2.jpg", "price": 120, "discoutRate": 12, "review": 4.7, "description": "Wireless headphones with deep bass." },
+        { "id": 303, "name": "Headphone 3", "imageName": "headphone3.jpg", "price": 90, "discoutRate": 8, "review": 4.5, "description": "Lightweight and comfortable fit." },
+        { "id": 304, "name": "Headphone 4", "imageName": "headphone4.jpg", "price": 90, "discoutRate": 8, "review": 4.5, "description": "Lightweight and comfortable fit." },
+        { "id": 305, "name": "Headphone 5", "imageName": "headphone5.jpg", "price": 90, "discoutRate": 8, "review": 4.5, "description": "Lightweight and comfortable fit." },
+        { "id": 306, "name": "Headphone 6", "imageName": "headphone6.jpg", "price": 90, "discoutRate": 8, "review": 4.5, "description": "Lightweight and comfortable fit." },
+        { "id": 401, "name": "Watch 1", "imageName": "watch1.jpg", "price": 200, "discoutRate": 10, "review": 4.5, "description": "Elegant wristwatch with leather strap." },
+        { "id": 402, "name": "Watch 2", "imageName": "watch2.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
+        { "id": 403, "name": "Watch 3", "imageName": "watch3.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
+        { "id": 404, "name": "Watch 4", "imageName": "watch4.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
+        { "id": 405, "name": "Watch 5", "imageName": "watch5.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
+        { "id": 406, "name": "Watch 6", "imageName": "watch6.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
+        { "id": 407, "name": "Watch 7", "imageName": "watch7.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
+        { "id": 501, "name": "Sunglass 1", "imageName": "glass1.jpg", "price": 80, "discoutRate": 5, "review": 4.2, "description": "Stylish sunglasses with UV protection." },
+        { "id": 502, "name": "Sunglass 2", "imageName": "glass2.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." },
+        { "id": 503, "name": "Sunglass 3", "imageName": "glass3.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." },
+        { "id": 504, "name": "Sunglass 4", "imageName": "glass4.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." },
+        { "id": 505, "name": "Sunglass 5", "imageName": "glass5.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." },
+        { "id": 506, "name": "Sunglass 6", "imageName": "glass6.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." }
+
+    ],
+    "productLists": [
+      {
+        "id": 1,
+        "name": "Cameras",
+        "items": [
+          { "id": 101, "name": "Camera 1", "imageName": "camera1.jpg", "price": 500, "discoutRate": 10, "review": 4.5, "description": "High-quality camera for photography." },
+          { "id": 102, "name": "Camera 2", "imageName": "camera2.jpg", "price": 650, "discoutRate": 15, "review": 4.2, "description": "Professional camera with advanced features." },
+          { "id": 103, "name": "Camera 3", "imageName": "camera3.jpg", "price": 450, "discoutRate": 5, "review": 4.0, "description": "Compact camera for daily use." },
+          { "id": 104, "name": "Camera 4", "imageName": "camera4.jpg", "price": 750, "discoutRate": 20, "review": 4.8, "description": "Best-in-class DSLR camera." },
+          { "id": 105, "name": "Camera 5", "imageName": "camera5.jpg", "price": 550, "discoutRate": 8, "review": 4.3, "description": "Great camera for travel photography." },
+          { "id": 106, "name": "Camera 6", "imageName": "camera6.jpg", "price": 600, "discoutRate": 12, "review": 4.6, "description": "High-performance camera with zoom lens." }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Minicars",
+        "items": [
+          { "id": 201, "name": "Mini Car 1", "imageName": "mini1.jpg", "price": 15000, "discoutRate": 5, "review": 4.1, "description": "Compact and stylish mini car." },
+          { "id": 202, "name": "Mini Car 2", "imageName": "mini2.jpg", "price": 18000, "discoutRate": 7, "review": 4.3, "description": "Economical and reliable city car." },
+          { "id": 203, "name": "Mini Car 3", "imageName": "mini3.jpg", "price": 17000, "discoutRate": 6, "review": 4.2, "description": "Great fuel efficiency and smooth drive." },
+          { "id": 204, "name": "Mini Car 4", "imageName": "mini4.jpg", "price": 16000, "discoutRate": 4, "review": 4.0, "description": "Compact yet powerful performance." },
+          { "id": 205, "name": "Mini Car 5", "imageName": "mini5.jpg", "price": 17500, "discoutRate": 8, "review": 4.5, "description": "Affordable and spacious interior." },
+          { "id": 206, "name": "Mini Car 6", "imageName": "mini6.jpg", "price": 15500, "discoutRate": 3, "review": 4.0, "description": "Stylish mini car with modern features." }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Headphones",
+        "items": [
+          { "id": 301, "name": "Headphone 1", "imageName": "headphone1.jpg", "price": 100, "discoutRate": 10, "review": 4.6, "description": "Noise-canceling over-ear headphones." },
+          { "id": 302, "name": "Headphone 2", "imageName": "headphone2.jpg", "price": 120, "discoutRate": 12, "review": 4.7, "description": "Wireless headphones with deep bass." },
+          { "id": 303, "name": "Headphone 3", "imageName": "headphone3.jpg", "price": 90, "discoutRate": 8, "review": 4.5, "description": "Lightweight and comfortable fit." },
+          { "id": 303, "name": "Headphone 4", "imageName": "headphone4.jpg", "price": 90, "discoutRate": 8, "review": 4.5, "description": "Lightweight and comfortable fit." },
+          { "id": 303, "name": "Headphone 5", "imageName": "headphone5.jpg", "price": 90, "discoutRate": 8, "review": 4.5, "description": "Lightweight and comfortable fit." },
+          { "id": 303, "name": "Headphone 6", "imageName": "headphone6.jpg", "price": 90, "discoutRate": 8, "review": 4.5, "description": "Lightweight and comfortable fit." }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Watches",
+        "items": [
+          { "id": 401, "name": "Watch 1", "imageName": "watch1.jpg", "price": 200, "discoutRate": 10, "review": 4.5, "description": "Elegant wristwatch with leather strap." },
+          { "id": 402, "name": "Watch 2", "imageName": "watch2.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
+          { "id": 402, "name": "Watch 3", "imageName": "watch3.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
+          { "id": 402, "name": "Watch 4", "imageName": "watch4.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
+          { "id": 402, "name": "Watch 5", "imageName": "watch5.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
+          { "id": 402, "name": "Watch 6", "imageName": "watch6.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
+          { "id": 402, "name": "Watch 7", "imageName": "watch7.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Sunglasses",
+        "items": [
+          { "id": 501, "name": "Sunglass 1", "imageName": "glass1.jpg", "price": 80, "discoutRate": 5, "review": 4.2, "description": "Stylish sunglasses with UV protection." },
+          { "id": 502, "name": "Sunglass 2", "imageName": "glass2.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." },
+          { "id": 502, "name": "Sunglass 3", "imageName": "glass3.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." },
+          { "id": 502, "name": "Sunglass 4", "imageName": "glass4.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." },
+          { "id": 502, "name": "Sunglass 5", "imageName": "glass5.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." },
+          { "id": 502, "name": "Sunglass 6", "imageName": "glass6.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." }
+        ]
+      }
+    ],
+    "top-sellers-products": [
+        { "id": 101, "name": "Camera 1", "imageName": "camera1.jpg", "price": 500, "discountRate": 10, "review": 4.5, "description": "High-quality camera for photography." },
+        { "id": 201, "name": "Mini Car 1", "imageName": "mini1.jpg", "price": 15000, "discountRate": 5, "review": 4.1, "description": "Compact and stylish mini car." },
+        { "id": 301, "name": "Headphone 1", "imageName": "headphone1.jpg", "price": 100, "discountRate": 10, "review": 4.6, "description": "Noise-canceling over-ear headphones." },
+        { "id": 401, "name": "Watch 1", "imageName": "watch1.jpg", "price": 200, "discountRate": 10, "review": 4.5, "description": "Elegant wristwatch with leather strap." },
+        { "id": 501, "name": "Sunglass 1", "imageName": "glass1.jpg", "price": 80, "discountRate": 5, "review": 4.2, "description": "Stylish sunglasses with UV protection." }
+      ],
+      "top-new-products": [
+        { "id": 102, "name": "Camera 2", "imageName": "camera2.jpg", "price": 650, "discountRate": 15, "review": 4.2, "description": "Professional camera with advanced features." },
+        { "id": 202, "name": "Mini Car 2", "imageName": "mini2.jpg", "price": 18000, "discountRate": 7, "review": 4.3, "description": "Economical and reliable city car." },
+        { "id": 302, "name": "Headphone 2", "imageName": "headphone2.jpg", "price": 120, "discountRate": 12, "review": 4.7, "description": "Wireless headphones with deep bass." },
+        { "id": 402, "name": "Watch 2", "imageName": "watch2.jpg", "price": 220, "discountRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
+        { "id": 502, "name": "Sunglass 2", "imageName": "glass2.jpg", "price": 100, "discountRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." }
+      ],
+    "carts": [
+        {
+          "id": "e364b282-6460-4665-bfc8-1c5bb68f18ff",
+          "total": 123.12,
+          "subTotal": 123.12,
+          "tax": 14.7,
+          "items": [
+            {
+              "id": 5029,
+              "name": "sony xperia xz3",
+              "imageName": "sony-xperia-xz3-.jpg",
+              "price": 725,
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "orders": [
+        {
+          "id": "5239eb84-4a00-40c0-938d-e63d2abede7d",
+          "total": 123.12,
+          "subTotal": 123.12,
+          "tax": 14.7,
+          "items": [
+            {
+              "id": 5029,
+              "name": "sony xperia xz3",
+              "imageName": "sony-xperia-xz3-.jpg",
+              "price": 725,
+              "qty": 1
+            }
+          ],
+          "customer": {
+            "email": "titi@toto.com",
+            "phone": "06060606",
+            "note": "",
+            "billingAdress": {
+              "civility": "Mr",
+              "firstName": "test",
+              "lastName": "test",
+              "zipCode": "14789",
+              "street": "18 rue Goubet 3eme etage  ",
+              "companyName": "DECADE",
+              "county": "france",
+              "city": "Paris"
+            },
+            "shippingAdress": {
+              "civility": "Mr",
+              "firstName": "test",
+              "lastName": "test",
+              "zipCode": "14789",
+              "street": "18 rue Goubet 3eme etage  ",
+              "companyName": "DECADE",
+              "county": "france",
+              "city": "Paris"
+            }
+          },
+          "paymentMethod": "paypal"
+        }
+      ]
+  }
+  

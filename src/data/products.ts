@@ -101,7 +101,7 @@ export const products : Product[] = [
         name: 'Mini Car',
         description : 'Description of the product',
         price: 50,
-        image_url : 'https://llzdzmpnnjsludfejqjp.supabase.co/storage/v1/object/public/wecommerce-products-images/test-url',
+        image_url : '/images/mini-car.jpg',
         rating: 5,
         bayer: Bayers[2]
     },

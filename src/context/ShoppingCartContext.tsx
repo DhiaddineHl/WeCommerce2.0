@@ -1,4 +1,5 @@
-import React, { createContext, ReactNode, useContext, useState } from 'react'
+import  { createContext, ReactNode, useContext, useState } from 'react'
+import { CartItem } from '../hooks/models'
 
 
 interface providerProps {
@@ -15,10 +16,6 @@ type ShoppingCartContext = {
     
 }
 
-type CartItem = {
-    id : number,
-    quantity : number
-}
 
 const ShoppingCartContext = createContext({} as ShoppingCartContext)
 
@@ -35,22 +32,22 @@ const ShoppingCartProvider = ({children} : providerProps) => {
 
     
     const cartQuantity = cartItems.reduce((quantity, item) =>
-        item.quantity + quantity , 0
+        item.qty + quantity , 0
     )
 
     
     function getItemQuantity (id: number) {
-        return cartItems.find(item => item.id === id)?.quantity || 0
+        return cartItems.find(item => item.id === id)?.qty || 0
     }
 
     function increaseCartquantity(id : number) {
         setCartItems(currItems => {
             if (currItems.find(item => item.id === id) == null){
-                return[...currItems, {id,quantity : 1}]
+                return[...currItems, {id, qty: 1, name: '', imageName: '', price: 0}]
             }else {
                 return currItems.map(item => {
                     if(item.id === id){
-                        return {...item, quantity : item.quantity +1}
+                        return {...item, qty: item.qty + 1}
                     }else {
                         return item
                     }
@@ -60,12 +57,12 @@ const ShoppingCartProvider = ({children} : providerProps) => {
     }
     function decreaseCartquantity(id : number) {
         setCartItems(currItems => {
-            if (currItems.find(item => item.id === id)?.quantity === 1){
+            if (currItems.find(item => item.id === id)?.qty === 1){
                 return currItems.filter(item => item.id !== id)
             }else {
                 return currItems.map(item => {
                     if(item.id === id){
-                        return {...item, quantity : item.quantity - 1}
+                        return {...item, qty: item.qty - 1}
                     }else {
                         return item
                     }

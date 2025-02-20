@@ -2,30 +2,8 @@ import apiClient from "../services/apiClient"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { ProductCreationRequest } from "./utils/ProductCreationRequest";
 import { useNavigate } from "react-router-dom";
+import { Product } from "./models";
 
-interface Product {
-    id : number;
-    name : string;
-    description : string;
-    price : number;
-    rating : number;
-    image_url : string;
-    sellerId : number;
-
-}
-
-const fetchProductsBySeller = () => {
-
-    const fetchProducts = () =>
-    apiClient
-    .get<Product[]>("/products/seller-token")
-    .then(res => res.data)
-
-    return useQuery<Product[]>({
-        queryKey : ["products"],
-        queryFn : fetchProducts
-    })
-}
 
 const fetchProducts = () => {
 
@@ -41,8 +19,19 @@ const fetchProducts = () => {
 
 }
 
-const fetchProduct = () => {
+const fetchProductById = (id: number) => {
+    
+    const fetchProduct = () =>
+        apiClient
+        .get<Product[]>("/products/", {
+            params: { id }
+        })
+        .then(res => res.data)
 
+    return useQuery<Product[]>({
+        queryKey : ["products", id],
+        queryFn : fetchProduct
+    })
 }
 
 const createProduct = () => {
@@ -66,8 +55,7 @@ const createProduct = () => {
 }
 
 export default {
-    fetchProductsBySeller,
-    fetchProduct,
+    fetchProductById,
     createProduct,
     fetchProducts
 }
