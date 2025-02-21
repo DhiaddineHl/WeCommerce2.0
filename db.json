@@ -72,9 +72,9 @@
           { "id": 301, "name": "Headphone 1", "imageName": "headphone1.jpg", "price": 100, "discoutRate": 10, "review": 4.6, "description": "Noise-canceling over-ear headphones." },
           { "id": 302, "name": "Headphone 2", "imageName": "headphone2.jpg", "price": 120, "discoutRate": 12, "review": 4.7, "description": "Wireless headphones with deep bass." },
           { "id": 303, "name": "Headphone 3", "imageName": "headphone3.jpg", "price": 90, "discoutRate": 8, "review": 4.5, "description": "Lightweight and comfortable fit." },
-          { "id": 303, "name": "Headphone 4", "imageName": "headphone4.jpg", "price": 90, "discoutRate": 8, "review": 4.5, "description": "Lightweight and comfortable fit." },
-          { "id": 303, "name": "Headphone 5", "imageName": "headphone5.jpg", "price": 90, "discoutRate": 8, "review": 4.5, "description": "Lightweight and comfortable fit." },
-          { "id": 303, "name": "Headphone 6", "imageName": "headphone6.jpg", "price": 90, "discoutRate": 8, "review": 4.5, "description": "Lightweight and comfortable fit." }
+          { "id": 304, "name": "Headphone 4", "imageName": "headphone4.jpg", "price": 90, "discoutRate": 8, "review": 4.5, "description": "Lightweight and comfortable fit." },
+          { "id": 305, "name": "Headphone 5", "imageName": "headphone5.jpg", "price": 90, "discoutRate": 8, "review": 4.5, "description": "Lightweight and comfortable fit." },
+          { "id": 306, "name": "Headphone 6", "imageName": "headphone6.jpg", "price": 90, "discoutRate": 8, "review": 4.5, "description": "Lightweight and comfortable fit." }
         ]
       },
       {
@@ -83,11 +83,11 @@
         "items": [
           { "id": 401, "name": "Watch 1", "imageName": "watch1.jpg", "price": 200, "discoutRate": 10, "review": 4.5, "description": "Elegant wristwatch with leather strap." },
           { "id": 402, "name": "Watch 2", "imageName": "watch2.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
-          { "id": 402, "name": "Watch 3", "imageName": "watch3.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
-          { "id": 402, "name": "Watch 4", "imageName": "watch4.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
-          { "id": 402, "name": "Watch 5", "imageName": "watch5.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
-          { "id": 402, "name": "Watch 6", "imageName": "watch6.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
-          { "id": 402, "name": "Watch 7", "imageName": "watch7.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." }
+          { "id": 403, "name": "Watch 3", "imageName": "watch3.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
+          { "id": 404, "name": "Watch 4", "imageName": "watch4.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
+          { "id": 405, "name": "Watch 5", "imageName": "watch5.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
+          { "id": 406, "name": "Watch 6", "imageName": "watch6.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." },
+          { "id": 407, "name": "Watch 7", "imageName": "watch7.jpg", "price": 220, "discoutRate": 15, "review": 4.6, "description": "Classic analog watch with premium build." }
         ]
       },
       {
@@ -96,10 +96,10 @@
         "items": [
           { "id": 501, "name": "Sunglass 1", "imageName": "glass1.jpg", "price": 80, "discoutRate": 5, "review": 4.2, "description": "Stylish sunglasses with UV protection." },
           { "id": 502, "name": "Sunglass 2", "imageName": "glass2.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." },
-          { "id": 502, "name": "Sunglass 3", "imageName": "glass3.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." },
-          { "id": 502, "name": "Sunglass 4", "imageName": "glass4.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." },
-          { "id": 502, "name": "Sunglass 5", "imageName": "glass5.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." },
-          { "id": 502, "name": "Sunglass 6", "imageName": "glass6.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." }
+          { "id": 503, "name": "Sunglass 3", "imageName": "glass3.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." },
+          { "id": 504, "name": "Sunglass 4", "imageName": "glass4.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." },
+          { "id": 505, "name": "Sunglass 5", "imageName": "glass5.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." },
+          { "id": 506, "name": "Sunglass 6", "imageName": "glass6.jpg", "price": 100, "discoutRate": 8, "review": 4.3, "description": "Polarized sunglasses for better vision." }
         ]
       }
     ],

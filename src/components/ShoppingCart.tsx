@@ -3,7 +3,6 @@ import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import CartItem from './CartItem';
 import { useShoppingCart } from '../context/ShoppingCartContext';
-import createPayment from '../hooks/usePayment';
 import useProducts from '../hooks/useProducts';
 import { Link } from 'react-router-dom';
 
@@ -31,7 +30,6 @@ const ShoppingCart = ({isOpen, onClose} : ShoppingCartProps) => {
   //   return product?.sellerId
   // }
 
-  const onCreatePayment = createPayment();
 
   // if(onCreatePayment.isSuccess) {
   //   window.location.href = 'http://localhost:3001/login-particular'

@@ -1,13 +1,13 @@
 import ProductCard from '../components/ProductCard'
-// import { products } from '../data/products'
+import { Product } from '../hooks/models';
 import useProducts from '../hooks/useProducts'
 
-const ProductsPage = () => {
+interface ProductGridProps {
+    products: Product[]
+}
 
-  const {data : products} = useProducts.fetchProducts();
+const ProductsPage = ({products}: ProductGridProps) => {
 
-  // console.log(productsApi);
-  
 
   return (
     <div className="mt-6 mb-8 mx-8 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">

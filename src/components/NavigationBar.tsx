@@ -6,6 +6,7 @@ import { useShoppingCart } from "../context/ShoppingCartContext";
 import { Link } from "react-router-dom";
 import Cookies from 'universal-cookie';
 import { useState } from "react";
+import CategoriesMenu from "./CategoriesMenu";
 
 interface NavigationBarProps {
   onOpenCart? : () => void
@@ -25,17 +26,15 @@ const NavigationBar = ({onOpenCart} : NavigationBarProps) => {
   return (
     <Flex direction="row" justify={'between'} align={'center'} className="p-4 shadow-md" >
         <FaShop size={'40'} />
-        {
-          access_token && 
           <Flex gap={'6'}>
             <Link to={"/"}>
-              <Text weight={'medium'} >Marketplace</Text>
+              <Text weight={'medium'} >Home</Text>
             </Link>
-            <Link to={"/my-products"}>
-              <Text weight={'medium'} >My Products</Text>
+            <Link to={"/shop"}>
+              <Text weight={'medium'} >Shop</Text>
             </Link>
+            <CategoriesMenu />
           </Flex>
-        }
       <Flex gap={'6'}>
         <TextField.Root radius="full" size={'3'} variant="soft" color="gray" placeholder="Search for a product…" />
         <Flex gap={'2'} align={'center'} onClick={onOpenCart}>

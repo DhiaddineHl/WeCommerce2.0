@@ -3,6 +3,7 @@ import ShopPage from './routes/ShopPage';
 import CheckoutPage from './routes/CheckoutPage';
 import ProductDetailsPage from './routes/ProductDetailsPage';
 import HomePage from './routes/HomePage';
+import ProductsListPage from './routes/ProductsListPage';
 
 export const appRouter = createBrowserRouter([
     {
@@ -20,5 +21,9 @@ export const appRouter = createBrowserRouter([
     {
         path: '/products/:id',
         element: <ProductDetailsPage />
+    },
+    {
+        path: '/productLists/:name',
+        element: <ProductsListPage />
     }
 ])
