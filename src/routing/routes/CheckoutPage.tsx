@@ -5,11 +5,9 @@ import ShoppingCartProvider from '../../context/ShoppingCartContext'
 
 const CheckoutPage = () => {
   return (
-    <ShoppingCartProvider>
         <PageLayout>
             <CheckoutForm />
         </PageLayout>
-    </ShoppingCartProvider>
   )
 }
 

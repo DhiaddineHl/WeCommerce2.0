@@ -39,7 +39,7 @@ const brands = [
 
 const BrandsGrid = () => {
   return (
-    <Grid columns="4" gap="6" rows="repeat(2, 80px)" width="30%">
+    <Grid columns="4" gap="6" rows="repeat(2, 80px)" width="30%" className='my-8'>
         {brands.map((brand) => (
             <img src={brand.image} alt={'Image of ' + brand.name} />
         ))}

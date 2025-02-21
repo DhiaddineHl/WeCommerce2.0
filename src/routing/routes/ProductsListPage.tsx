@@ -16,7 +16,6 @@ const ProductsListPage = () => {
     }
     
     return (
-        <ShoppingCartProvider>
             <PageLayout>
                 {productLists?.[0]?.items ? (
                     <ProductsPage products={productLists[0].items} />
@@ -24,7 +23,6 @@ const ProductsListPage = () => {
                     <div>No products found</div>
                 )}
             </PageLayout>
-        </ShoppingCartProvider>
     );
 }
 

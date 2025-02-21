@@ -13,12 +13,10 @@ const ShopPage = () => {
   }
 
   return (
-    <ShoppingCartProvider>
       <PageLayout>
         <ProductsPage products={products} />
         <Paginator />
       </PageLayout>
-    </ShoppingCartProvider>
   )
 }
 

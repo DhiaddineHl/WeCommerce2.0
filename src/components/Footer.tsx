@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Form from '@radix-ui/react-form';
 import { EnvelopeClosedIcon } from '@radix-ui/react-icons';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -21,13 +22,13 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-gray-900">Categories</h3>
             <div className="flex flex-col space-y-2">
               {['Cameras', 'Headphones', 'Minicars', 'Watches', 'Sunglasses'].map((category) => (
-                <a 
+                <Link
                   key={category} 
-                  href={`/category/${category.toLowerCase()}`}
+                  to={`/productLists/${category}`}
                   className="text-gray-600 hover:text-gray-900 transition-colors"
                 >
                   {category}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

@@ -17,11 +17,9 @@ const ProductDetailsPage = () => {
     }
 
   return (
-    <ShoppingCartProvider>
         <PageLayout>
             <ProductDetails product={product[0]} />
         </PageLayout>
-    </ShoppingCartProvider>
   )
 }
 
